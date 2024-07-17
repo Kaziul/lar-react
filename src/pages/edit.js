@@ -26,7 +26,7 @@ export default function Edit(props) {
     const submitForm =()=>{
         console.log(inputs);
        http.put('/users/'+id,inputs).then(res=>{
-        navigate('/');
+        navigate('/user');
        })
     }
     return (

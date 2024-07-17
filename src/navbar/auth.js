@@ -6,6 +6,7 @@ import Edit from '../pages/edit'
 import View from '../pages/view';
 import Dashboard from '../pages/dashboard';
 import AuthUser from '../AuthUser';
+import User from '../pages/user';
 function Auth() {
     const { token, logout } = AuthUser();
     const logoutUser = () => {
@@ -26,6 +27,9 @@ function Auth() {
                                 <Link to={"/"} className="navbar-brand" >Home</Link>
                             </li>
                             <li className="nav-item">
+                                <Link to={"/user"} className="navbar-brand" >Users</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link to={"/create"} className="navbar-brand" >Create</Link>
                             </li>
                             <li className="nav-item">
@@ -41,11 +45,11 @@ function Auth() {
             <div className="container mt-3">
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/user" element={<User />} />
                     <Route path='/create' element={<Create />} />
                     <Route path='/edit/:id' element={<Edit />} />
                     <Route path='/view/:id' element={<View />} />
                     <Route path='/dashboard' element={<Dashboard />} />
-
                 </Routes>
             </div>
         </div>
